@@ -60,6 +60,6 @@ class Site::PostsController < SiteController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.expect(post: [ :name, :content, :publish_date, :featured, :active ])
+      params.expect(post: [ :name, :content, :publish_date, :featured, :active, :user_id ])
     end
 end

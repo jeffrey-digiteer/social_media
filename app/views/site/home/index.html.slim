@@ -19,4 +19,4 @@ h2 Active
   - @active_posts.each do |post|
     == render post
     p
-      = link_to "Show this post", post
+      = link_to "Show this post", [ :site, post ]
