@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  root "home#index"
-  resources :posts
+  root "site/home#index"
+  draw :site
+  draw :administrator
 end
