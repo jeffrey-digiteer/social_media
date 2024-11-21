@@ -1,9 +1,10 @@
 class Site::PostsController < SiteController
+  include Devise::Controllers::Helpers
   before_action :set_post, only: %i[ show edit update destroy ]
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.where(user_id: current_user.id)
   end
 
   # GET /posts/1 or /posts/1.json
@@ -60,6 +61,6 @@ class Site::PostsController < SiteController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.expect(post: [ :name, :content, :publish_date, :featured, :active ])
+      params.expect(post: [ :name, :content, :publish_date, :featured, :active, :user_id ])
     end
 end

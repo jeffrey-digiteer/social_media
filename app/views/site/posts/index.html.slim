@@ -7,7 +7,7 @@ h1 Posts
     == render post
     p
       = link_to "Show this post", [ :site, post ]
-
-= link_to "New post", new_site_post_path
-br
-= link_to "Feed", root_path
+    p
+      = link_to "New post", new_site_post_path
+    p
+      = button_to "Feed Page", root_path

@@ -1,4 +1,5 @@
 = form_with(model: [ :site, post ]) do |form|
+  = form.hidden_field :user_id, value: current_user.id
   - if post.errors.any?
     div style="color: red"
       h2 = "#{pluralize(post.errors.count, 'error')} prohibited this post from being saved:"
@@ -18,10 +19,6 @@
   div
     = form.label :publish_date, style: "display: block"
     = form.date_field :publish_date
-    
-  div
-    = form.label :featured, style: "display: block"
-    = form.check_box :featured
 
   div
     = form.label :active, style: "display: block"
