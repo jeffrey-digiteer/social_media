@@ -1,0 +1,17 @@
+h1 Home Page
+
+h2 Featured
+
+#posts
+  - @featured_posts.each do |post|
+    == render post
+    p
+      = link_to "Show this post", post
+
+h2 Active
+
+#posts
+  - @active_posts.each do |post|
+    == render post
+    p
+      = link_to "Show this post", post
