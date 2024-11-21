@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "home#index"
+  root "site/home#index"
   draw :site
   draw :admin
 end

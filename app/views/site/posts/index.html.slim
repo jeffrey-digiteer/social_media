@@ -6,8 +6,8 @@ h1 Posts
   - @posts.each do |post|
     == render post
     p
-      = link_to "Show this post", post
+      = link_to "Show this post", [:site, post]
 
-= link_to "New post", new_post_path
+= link_to "New post", new_site_post_path
 br
 = link_to "Feed", root_path
