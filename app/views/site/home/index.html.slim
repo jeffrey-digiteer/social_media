@@ -1,12 +1,17 @@
 h1 Home Page
 
+- if user_signed_in?
+  = button_to 'Logout', destroy_user_session_path, method: :delete
+- else 
+  = button_to 'Login', new_user_session_path
+
 h2 Featured
 
 #posts
   - @featured_posts.each do |post|
     == render post
     p
-      = link_to "Show this post", post
+      = link_to "Show this post", [ :site, post ]
 
 h2 Active
 
@@ -14,4 +19,4 @@ h2 Active
   - @active_posts.each do |post|
     == render post
     p
-      = link_to "Show this post", post
+      = link_to "Show this post", [ :site, post ]
