@@ -21,6 +21,10 @@
     = form.date_field :publish_date
 
   div
+    = form.label :featured, style: "display: block"
+    = form.check_box :featured
+
+  div
     = form.label :active, style: "display: block"
     = form.check_box :active
 

@@ -1,0 +1,10 @@
+p style="color: green" = notice
+
+== render @post
+
+div
+    = link_to "Edit this post", edit_admin_post_path(@post), style: "display: block; margin-bottom: 10px;"
+  
+    = link_to "Back to posts", admin_posts_path, style: "display: block; margin-top: 5px; margin-bottom: 10px;"
+
+    = button_to "Destroy this post", [ :admin, @post ], method: :delete
