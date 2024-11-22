@@ -10,6 +10,6 @@ devise_for :admins,
         sign_up: "register"
     }
 
-namespace :site, path: "/" do
+namespace :admin, path: "/admin" do
     resources :posts
 end

@@ -1,0 +1,10 @@
+h1 All Posts
+
+#posts
+  - @posts.each do |post|
+    == render post
+    p
+      = link_to "Show this post", [ :site, post ]
+
+- if admin_signed_in?
+  = button_to 'Logout Admin', destroy_admin_session_path, method: :delete

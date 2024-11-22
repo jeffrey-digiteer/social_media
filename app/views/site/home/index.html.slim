@@ -2,8 +2,11 @@ h1 Home Page
 
 - if user_signed_in?
   = button_to 'Logout', destroy_user_session_path, method: :delete
-- else 
+- elsif admin_signed_in?
+  = button_to 'Logout Admin', destroy_admin_session_path, method: :delete
+- else
   = button_to 'Login', new_user_session_path
+  = button_to 'Login Admin', new_admin_session_path
 
 h2 Featured
 
