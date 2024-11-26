@@ -2,7 +2,7 @@
 
 class Admin::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
-
+  after_action :clear_thread, only: [:destroy]
   # GET /resource/sign_in
   # def new
   #   super
@@ -29,4 +29,11 @@ class Admin::SessionsController < Devise::SessionsController
     # Redirect to admin posts path
     admin_posts_path
   end
+
+  private
+
+  def clear_thread
+    Thread.current[:current_user] = nil
+  end
+
 end
