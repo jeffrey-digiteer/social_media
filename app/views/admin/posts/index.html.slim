@@ -1,6 +1,10 @@
 h1 All Posts
 
-#posts
+turbo-frame#posts
+  = form_with url: admin_posts_path, method: :get, data: { turbo_frame: 'posts' } do |f|
+    = f.text_field :name, value: params[:name]
+    = f.select :order_by, options_for_select([['Name ⬆️', 'name asc'], ['Name ⬇️', 'name desc']], params[:order_by])
+    = f.submit "Search"
   - @posts.each do |post|
     == render post
     p

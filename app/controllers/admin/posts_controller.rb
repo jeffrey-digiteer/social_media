@@ -4,7 +4,8 @@ class Admin::PostsController < AdminController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    @had_record = Post.for_datatables.present?
+    @posts = Post.filter(params.slice(:name), params[:order_by].presence).for_datatables
   end
 
   # GET /posts/1 or /posts/1.json
