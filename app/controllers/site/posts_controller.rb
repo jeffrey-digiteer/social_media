@@ -4,7 +4,9 @@ class Site::PostsController < SiteController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.where(user_id: current_user.id)
+    @posts = Post.select("p.id, p.name, p.content, p.publish_date, p.featured, p.active, u.email")
+    .from("posts p JOIN users u ON p.user_id = u.id")
+    .where(p: { user_id: current_user.id })
   end
 
   # GET /posts/1 or /posts/1.json

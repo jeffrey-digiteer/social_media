@@ -1,0 +1,39 @@
+h1 Audit Logs
+
+#audittrails
+  - @audittrails.each do |audit|
+    .audit-log
+      p
+        strong Module:
+        = audit.module
+      p
+        strong Event Type:
+        = audit.event_type
+      p
+        strong Current Data:
+        = audit.current_data
+      p
+        strong Old Data:
+        = audit.old_data
+      p
+        strong Data Differences:
+        = audit.data_differences
+      p
+        strong IP Address:
+        = audit.ip_address
+      p
+        strong Modified By (Email):
+        = audit.modified_by_email
+      p
+        strong Modified By (Name):
+        = audit.modified_by_name
+      p
+        strong Created At:
+        = audit.created_at.strftime('%Y-%m-%d %H:%M:%S')
+      hr
+
+  - if @audittrails.empty?
+    p No audit trails found.
+
+= link_to "Go Back", admin_posts_path
+    

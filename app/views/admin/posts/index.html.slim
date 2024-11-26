@@ -7,4 +7,5 @@ h1 All Posts
       = link_to "Show this post", [ :admin, post ]
 
 - if admin_signed_in?
+  = link_to "Show Audits", admin_audittrails_path
   = button_to 'Logout Admin', destroy_admin_session_path, method: :delete

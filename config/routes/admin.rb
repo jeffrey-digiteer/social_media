@@ -12,4 +12,5 @@ devise_for :admins,
 
 namespace :admin, path: "/admin" do
     resources :posts
+    resources :audittrails
 end
