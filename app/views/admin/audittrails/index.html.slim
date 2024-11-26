@@ -4,31 +4,31 @@ h1 Audit Logs
   - @audittrails.each do |audit|
     .audit-log
       p
-        strong Module:
+        strong Module: 
         = audit.module
       p
-        strong Event Type:
+        strong Event Type: 
         = audit.event_type
       p
-        strong Current Data:
+        strong Current Data: 
         = audit.current_data
       p
-        strong Old Data:
+        strong Old Data: 
         = audit.old_data
       p
-        strong Data Differences:
+        strong Data Differences: 
         = audit.data_differences
       p
-        strong IP Address:
+        strong IP Address: 
         = audit.ip_address
       p
-        strong Modified By (Email):
+        strong Modified By (Email): 
         = audit.modified_by_email
       p
-        strong Modified By (Name):
+        strong Modified By (Name): 
         = audit.modified_by_name
       p
-        strong Created At:
+        strong Created At: 
         = audit.created_at.strftime('%Y-%m-%d %H:%M:%S')
       hr
 
